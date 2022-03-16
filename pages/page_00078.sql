@@ -1,0 +1,283 @@
+prompt --application/pages/page_00078
+begin
+--   Manifest
+--     PAGE: 00078
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.4'
+,p_default_workspace_id=>20952813001415487158
+,p_default_application_id=>141546
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_DDD451261366WORKSPACE'
+);
+wwv_flow_api.create_page(
+ p_id=>78
+,p_user_interface_id=>wwv_flow_api.id(21352811266698583054)
+,p_name=>'Expense_type_and_date_wise_expense'
+,p_alias=>'EXPENSE-TYPE-AND-DATE-WISE-EXPENSE'
+,p_step_title=>'Expense_type_and_date_wise_expense'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_last_updated_by=>'OLIURK2@GMAIL.COM'
+,p_last_upd_yyyymmddhh24miss=>'20210916185359'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(34335709424216723948)
+,p_plug_name=>'parameter'
+,p_region_template_options=>'t-Region--removeHeader js-removeLandmark:t-Region--textContent:t-Region--scrollBody:t-Form--xlarge:t-Form--stretchInputs'
+,p_plug_template=>wwv_flow_api.id(21352721678779582998)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_item_display_point=>'BELOW'
+,p_plug_source=>'<h1 style="color: #3333ff;"><center> Expense Type-Wise Expense Report <center> </h1>'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(34605125908318748776)
+,p_plug_name=>'Expense_type_and_date_wise_expense'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(21352719760576582997)
+,p_plug_display_sequence=>20
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SELECT  EXPENSE_VIEW.EXPENSE_TYPE_NAME, ',
+'EXPENSE_VIEW.EXPENSE_DATE, EXPENSE_VIEW.INVOICE, EXPENSE_VIEW.EXPENSE_AMOUNT, ',
+'EXPENSE_VIEW.PAYMENT_MODE, EXPENSE_VIEW.DESCRIPTION',
+'FROM EXPENSE_VIEW',
+'WHERE EXPENSE_TYPE_ID LIKE NVL(:P78_EXPENSE_TYPE,''%'')',
+'AND EXPENSE_DATE BETWEEN :P78_FROM_DATE AND :P78_TO_DATE',
+'ORDER  BY EXPENSE_VIEW.INVOICE desc'))
+,p_plug_source_type=>'NATIVE_IR'
+,p_ajax_items_to_submit=>'P78_EXPENSE_TYPE,P78_FROM_DATE,P78_TO_DATE'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>11
+,p_prn_height=>8.5
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header=>'Expense_type_and_date_wise_expense'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#EEEEEE'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'bold'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#FFFFFF'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+,p_prn_border_color=>'#666666'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(34605153424002771411)
+,p_max_row_count=>'1000000'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'N'
+,p_show_notify=>'Y'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_owner=>'OLIURK2@GMAIL.COM'
+,p_internal_uid=>34605153424002771411
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(34605153577112771412)
+,p_db_column_name=>'EXPENSE_TYPE_NAME'
+,p_display_order=>10
+,p_column_identifier=>'A'
+,p_column_label=>'Expense Type Name'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(34605153620972771413)
+,p_db_column_name=>'EXPENSE_DATE'
+,p_display_order=>20
+,p_column_identifier=>'B'
+,p_column_label=>'Expense Date'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(34605153702627771414)
+,p_db_column_name=>'INVOICE'
+,p_display_order=>30
+,p_column_identifier=>'C'
+,p_column_label=>'Invoice'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(34605153837169771415)
+,p_db_column_name=>'EXPENSE_AMOUNT'
+,p_display_order=>40
+,p_column_identifier=>'D'
+,p_column_label=>'Expense Amount'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'99,99,99,999.99'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(34605153903132771416)
+,p_db_column_name=>'PAYMENT_MODE'
+,p_display_order=>50
+,p_column_identifier=>'E'
+,p_column_label=>'Payment Mode'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(34605154012257771417)
+,p_db_column_name=>'DESCRIPTION'
+,p_display_order=>60
+,p_column_identifier=>'F'
+,p_column_label=>'Description'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(34613318391070612413)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'346133184'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'EXPENSE_TYPE_NAME:EXPENSE_DATE:INVOICE:EXPENSE_AMOUNT:PAYMENT_MODE:DESCRIPTION'
+,p_break_on=>'EXPENSE_TYPE_NAME:0:0:0:0:0'
+,p_break_enabled_on=>'EXPENSE_TYPE_NAME:0:0:0:0:0'
+,p_sum_columns_on_break=>'EXPENSE_AMOUNT'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(34335709534343723949)
+,p_name=>'P78_EXPENSE_TYPE'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(34335709424216723948)
+,p_prompt=>'Expense Type'
+,p_display_as=>'NATIVE_POPUP_LOV'
+,p_lov=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select distinct expense_type_name, expense_type.expense_type_id',
+'from   expense_type,expense_d',
+'where  expense_d.expense_type_id = expense_type.expense_type_id',
+'order  by expense_type_name;'))
+,p_lov_display_null=>'YES'
+,p_cSize=>30
+,p_colspan=>5
+,p_grid_column=>4
+,p_field_template=>wwv_flow_api.id(21352784098317583033)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'POPUP'
+,p_attribute_02=>'FIRST_ROWSET'
+,p_attribute_03=>'N'
+,p_attribute_04=>'N'
+,p_attribute_05=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(34335709669123723950)
+,p_name=>'P78_FROM_DATE'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(34335709424216723948)
+,p_prompt=>'From Date'
+,p_display_as=>'NATIVE_DATE_PICKER_JET'
+,p_cSize=>30
+,p_colspan=>4
+,p_grid_column=>3
+,p_grid_label_column_span=>1
+,p_field_template=>wwv_flow_api.id(21352784098317583033)
+,p_item_template_options=>'#DEFAULT#:margin-left-none:margin-right-none'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'POPUP'
+,p_attribute_03=>'NONE'
+,p_attribute_06=>'NONE'
+,p_attribute_09=>'N'
+,p_attribute_11=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(34605152409209771401)
+,p_name=>'P78_TO_DATE'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(34335709424216723948)
+,p_prompt=>'To Date'
+,p_display_as=>'NATIVE_DATE_PICKER_JET'
+,p_cSize=>30
+,p_begin_on_new_line=>'N'
+,p_colspan=>4
+,p_grid_label_column_span=>0
+,p_field_template=>wwv_flow_api.id(21352784098317583033)
+,p_item_template_options=>'#DEFAULT#:margin-left-none:margin-right-none'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'POPUP'
+,p_attribute_03=>'NONE'
+,p_attribute_06=>'NONE'
+,p_attribute_09=>'N'
+,p_attribute_11=>'Y'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(34605152506439771402)
+,p_name=>'page_submit'
+,p_event_sequence=>10
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P78_EXPENSE_TYPE,P78_FROM_DATE,P78_TO_DATE'
+,p_condition_element=>'P78_EXPENSE_TYPE'
+,p_triggering_condition_type=>'NOT_NULL'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(34605152655414771403)
+,p_event_id=>wwv_flow_api.id(34605152506439771402)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(34605125908318748776)
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(34605154104975771418)
+,p_name=>'clear parameter'
+,p_event_sequence=>20
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(34605154205050771419)
+,p_event_id=>wwv_flow_api.id(34605154104975771418)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P78_EXPENSE_TYPE,P78_FROM_DATE,P78_TO_DATE'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(34605154347130771420)
+,p_event_id=>wwv_flow_api.id(34605154104975771418)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(34605125908318748776)
+);
+wwv_flow_api.component_end;
+end;
+/
