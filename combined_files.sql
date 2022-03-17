@@ -1,7 +1,7 @@
-prompt --application/comments
+prompt --application/user_interfaces/combined_files
 begin
 --   Manifest
---     APPLICATION COMMENTS: 103682
+--     COMBINED FILES: 103682
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'

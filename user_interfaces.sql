@@ -1,18 +1,18 @@
 prompt --application/user_interfaces
 begin
 --   Manifest
---     USER INTERFACES: 141546
+--     USER INTERFACES: 103682
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.4'
+,p_release=>'21.2.5'
 ,p_default_workspace_id=>20952813001415487158
-,p_default_application_id=>141546
+,p_default_application_id=>103682
 ,p_default_id_offset=>0
 ,p_default_owner=>'WKSP_DDD451261366WORKSPACE'
 );
 wwv_flow_api.create_user_interface(
- p_id=>wwv_flow_api.id(21352811266698583054)
+ p_id=>wwv_flow_api.id(37917132921971284510)
 ,p_ui_type_name=>'DESKTOP'
 ,p_display_name=>'Desktop'
 ,p_display_seq=>10
@@ -24,14 +24,14 @@ wwv_flow_api.create_user_interface(
 ,p_theme_style_by_user_pref=>false
 ,p_built_with_love=>false
 ,p_global_page_id=>0
-,p_navigation_list_id=>wwv_flow_api.id(21352564536546582962)
-,p_navigation_list_position=>'TOP'
-,p_navigation_list_template_id=>wwv_flow_api.id(21352779934748583028)
-,p_nav_list_template_options=>'js-tabLike'
-,p_css_file_urls=>'#APP_IMAGES#app-icon.css?version=#APP_VERSION#'
+,p_navigation_list_id=>wwv_flow_api.id(37916845175040284432)
+,p_navigation_list_position=>'SIDE'
+,p_navigation_list_template_id=>wwv_flow_api.id(37917096035025284494)
+,p_nav_list_template_options=>'#DEFAULT#:t-TreeNav--styleA:js-navCollapsed--hidden'
+,p_css_file_urls=>'#APP_FILES#app-icon.css?version=#APP_VERSION#'
 ,p_nav_bar_type=>'LIST'
-,p_nav_bar_list_id=>wwv_flow_api.id(21352810900011583054)
-,p_nav_bar_list_template_id=>wwv_flow_api.id(21352774121639583024)
+,p_nav_bar_list_id=>wwv_flow_api.id(37917132672169284509)
+,p_nav_bar_list_template_id=>wwv_flow_api.id(37917095610451284494)
 ,p_nav_bar_template_options=>'#DEFAULT#'
 );
 wwv_flow_api.component_end;
